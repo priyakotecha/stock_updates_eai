@@ -61,7 +61,7 @@ func main() {
 
 // fetchTopStocks fetches the list of top 20 stocks along with their open prices from the Polygon API.
 func fetchTopStocks(apiKey string) ([]models.Stock, error) {
-	url := "https://api.polygon.io/v3/reference/tickers?type=cs&sort=ticker&order=asc&limit=20&apiKey=" + apiKey
+	url := "https://api.polygon.io/v3/reference/tickers?active=true&order=asc&limit=20&sort=ticker&apiKey" + apiKey
 
 	response, err := http.Get(url)
 	if err != nil {
